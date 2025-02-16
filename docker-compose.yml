@@ -1,0 +1,23 @@
+services:
+  lanchonete-node:
+    build:
+      context: .
+    container_name: lanchonete-swagger
+    environment:
+      PORT_SERVER: ${PORT_SERVER}
+    ports:
+      - "${HOST_PORT_SERVER}:${CONTAINER_PORT_SERVER}"
+    restart: always
+    networks:
+      - fiap
+    expose:
+      - ${CONTAINER_PORT_SERVER}
+    volumes:
+      - node_data:${VOLUME_NODE_API}
+
+volumes:
+  node_data:
+
+networks:
+  fiap:
+    driver: bridge
