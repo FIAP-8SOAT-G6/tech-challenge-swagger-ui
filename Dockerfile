@@ -10,16 +10,20 @@ ENV API_PORT=${API_PORT}
 
 EXPOSE $PORT
 
-RUN mkdir -p /usr/src/app
+RUN mkdir -p /home/node/app
 
-WORKDIR /usr/src/app
+RUN chown -R swagger-api /home/node/app
+
+WORKDIR /home/node/app
 
 COPY package*.json ./
 
-RUN npm install -g nodemon && npm install
+RUN npm ci
 
 COPY --chown=swagger-api . .
 
 USER swagger-api
 
-CMD ["npm", "run", "dev"]
+RUN npm run build
+
+CMD [ "node", "build/index.js" ]
