@@ -10,6 +10,9 @@ service:
   port: 8080
   targetPort: 8080
 
+database:
+  useStatefulSet: false
+
 replicaCount: 1
 resources:
   requests:
