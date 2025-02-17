@@ -141,6 +141,6 @@ jobs:
         env:
           TAG: ${{ needs.docker-build-and-push.outputs.PUSHED_TAG }}
         run: |
-          helm upgrade --install $HELM_RELEASE_NAME tcl/microservice \
+          helm upgrade --install $HELM_RELEASE_NAME tcl/stateless-microservice \
             -f infra/chart-values/aws-values.yaml \
             --set image.tag=$TAG
