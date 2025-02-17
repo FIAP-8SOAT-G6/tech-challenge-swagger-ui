@@ -1,14 +1,5 @@
-# Tech Challenge Microservice
+# Tech Challenge Swagger UI
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=FIAP-8SOAT-G6_tech-challenge-swagger-ui&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=FIAP-8SOAT-G6_tech-challenge-swagger-ui)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=FIAP-8SOAT-G6_tech-challenge-swagger-ui&metric=coverage)](https://sonarcloud.io/summary/new_code?id=FIAP-8SOAT-G6_tech-challenge-swagger-ui)
 
-Template para criação de novos microserviços no projeto **Tech Challenge Lanchonete**.
-Funcionalidades cobertas:
-- Pull Request Template
-- SonarQube
-- Microservice Build
-- Docker Build
-
-## Como usar?
-
-1. Crie o repositório do microsserviço a partir deste template
-2. Modifique os valores no `sonar-project.properties` conforme o seu projeto
-3. Ajuste os *steps* dentro dos manifestos de **GitHub Workflows** conforme a tecnologia utilizada
+Aplicação para a documentação de Swagger do Tech Challenge Lanchonete.
