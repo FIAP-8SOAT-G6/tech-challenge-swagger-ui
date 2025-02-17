@@ -1,10 +1,11 @@
 services:
-  lanchonete-node:
+  lanchonete-swagger:
     build:
       context: .
     container_name: lanchonete-swagger
     environment:
       PORT_SERVER: ${PORT_SERVER}
+      SERVERS: '[{ "url": "http://localhost:${CONTAINER_PORT_SERVER}", "description": "Local Development"}]'
     ports:
       - "${HOST_PORT_SERVER}:${CONTAINER_PORT_SERVER}"
     restart: always
@@ -12,11 +13,6 @@ services:
       - fiap
     expose:
       - ${CONTAINER_PORT_SERVER}
-    volumes:
-      - node_data:${VOLUME_NODE_API}
-
-volumes:
-  node_data:
 
 networks:
   fiap:
