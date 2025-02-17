@@ -1,7 +1,12 @@
-import express from "express";
+import express, { Application } from "express";
 import { swaggerDocs, swaggerUi } from "./swagger";
 
-const app = express();
+function disableInformationDisclosure(app: Application) {
+    app.disable("x-powered-by");
+  }
+  
+  const app = express();
+  disableInformationDisclosure(app);
 
 app.use(express.json());
 app.use(["/", "/api-docs"], swaggerUi.serve, swaggerUi.setup(swaggerDocs));
